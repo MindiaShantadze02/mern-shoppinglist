@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+button {
+  cursor: pointer;
+}
+.navbar {
+  background-color: #000;
+  padding: 25px 50px;
+}
+.navbar > h2 {
+  color: #fff;
+}
+.form-wrapper {
+  padding: 50px 50px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.form > input , .form > button {
+  padding: 10px 0;
+}
+.form > input {
+  color: gray;
+  font-size: 18px;
+  font-weight: bold;
+}
+.form > button {
+  background-color: #000;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+}
+.items {
+  padding: 20px 50px;
+  list-style-type: none;
+}
+.item {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.item > button {
+  color: rgb(243, 64, 64);
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #fff;
+  border: 1px solid rgb(243, 64, 64);
+  padding: 7px 15px;
+  border-radius: 10px;
+  margin-right: 7px;
+}
+.item > button:hover {
+  background-color: rgb(243, 64, 64);
+  color: #fff;
+}
