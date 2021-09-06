@@ -1,33 +1,26 @@
+// npm packages
 const express = require("express");
 const dotenv = require("dotenv");
-const morgan = require("morgan");
+const path = require("path");
+// local imports
+const router = require("./routes/item");
 const connectDB = require("./config/db");
 
-// Defining path for env variables
+// setting up dotenv path
 dotenv.config({path: "./config/config.env"});
 
-// Importing routers
-const transactions = require("./routes/transactions");
-
-// Defining app
+// defining app
 const app = express();
 
-// Body parser
+// parsing body
 app.use(express.json());
 
-if (process.env.NODE_ENV === "development") {
-    app.use(morgan("dev"));
-}
+// using router
+app.use("/api",router);
 
-// Using routers
-app.use("/api/v1/transactions", transactions);
-
-
-// Connecting to database
+// connecting to database
 connectDB();
 
 
-// Listening to server
-app.listen(process.env.PORT, ()=> {
-    console.log(`Server started on port ${process.env.PORT}`);
-})
+// listening to the server
+app.listen(process.env.PORT, ()=> console.log(`Server is running on port: ${process.env.PORT}`));
